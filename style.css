@@ -5,15 +5,18 @@ body {
 }
 
 .navbar {
-    background-color: #333;
-    color: #fff;
+    background-color: #2f4f7f; /* Navy blue background */
+    color: #fff; /* White text */
     padding: 1rem;
     text-align: center;
+    border-bottom: 1px solid #ccc; /* Light gray border */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light gray shadow */
 }
 
 .navbar-brand {
     font-size: 1.5rem;
     font-weight: bold;
+    color: #fff; /* White text */
 }
 
 .navbar-nav {
@@ -29,12 +32,35 @@ body {
 }
 
 .navbar-nav a {
-    color: #fff;
+    color: #fff; /* White text */
     text-decoration: none;
+    transition: color 0.2s ease; /* Smooth color transition */
 }
 
 .navbar-nav a:hover {
-    color: #ccc;
+    color: #ccc; /* Light gray text on hover */
+}
+
+.navbar-nav a.active {
+    color: #ff9900; /* Orange text for active link */
+}
+
+.navbar-toggler {
+    background-color: #2f4f7f; /* Navy blue background */
+    border: none;
+    padding: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.navbar-toggler:hover {
+    background-color: #333; /* Dark gray background on hover */
+}
+
+.navbar-collapse {
+    background-color: #2f4f7f; /* Navy blue background */
+    padding: 1rem;
+    border-bottom: 1px solid #ccc; /* Light gray border */
 }
 
 .container {
