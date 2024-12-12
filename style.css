@@ -4,141 +4,17 @@ body {
     padding: 0;
 }
 
-.navbar {
-    background-color: #2f4f7f; /* Navy blue background */
-    color: #fff; /* White text */
-    padding: 1rem;
-    text-align: center;
-    border-bottom: 1px solid #ccc; /* Light gray border */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light gray shadow */
-}
-
-.navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #fff; /* White text */
-}
-
-.navbar-nav {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.hero {
+    background-image: url('hero.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
     display: flex;
-    justify-content: space-between;
-}
-
-.navbar-nav li {
-    margin-right: 20px;
-}
-
-.navbar-nav a {
-    color: #fff; /* White text */
-    text-decoration: none;
-    transition: color 0.2s ease; /* Smooth color transition */
-}
-
-.navbar-nav a:hover {
-    color: #ccc; /* Light gray text on hover */
-}
-
-.navbar-nav a.active {
-    color: #ff9900; /* Orange text for active link */
-}
-
-.navbar-toggler {
-    background-color: #2f4f7f; /* Navy blue background */
-    border: none;
-    padding: 10px;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-.navbar-toggler:hover {
-    background-color: #333; /* Dark gray background on hover */
-}
-
-.navbar-collapse {
-    background-color: #2f4f7f; /* Navy blue background */
-    padding: 1rem;
-    border-bottom: 1px solid #ccc; /* Light gray border */
-}
-
-.container {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-h2 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-p {
-    font-size: 1rem;
-    margin-bottom: 20px;
-}
-
-img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.btn {
-    background-color: #333;
+    justify-content: center;
+    align-items: center;
     color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
 }
 
-.btn:hover {
-    background-color: #555;
+.hero h1 {
+    font-size: 48px;
 }
-
-.form-control {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.form-control:focus {
-    border-color: #aaa;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-`` **JavaScript File:**
-
-### script.js
-
-```javascript
-// Add event listener to navbar toggle button
-document.querySelector('.navbar-toggler').addEventListener('click', function() {
-    document.querySelector('.navbar-collapse').classList.toggle('show');
-});
-
-// Add event listener to form submit button
-document.querySelector('form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    var name = document.querySelector('#name').value;
-    var email = document.querySelector('#email').value;
-    var message = document.querySelector('#message').value;
-    console.log('Name:', name);
-    console.log('Email:', email);
-    console.log('Message:', message);
-    // Send data to server using AJAX or fetch API
-});
