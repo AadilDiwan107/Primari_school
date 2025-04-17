@@ -3,176 +3,523 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Men's Shoes Shop</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <title>Primary School</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        h2 {
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #ffffff !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            padding: 1.2rem 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #007bff;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            color: #0056b3;
+        }
+
+        .navbar-toggler {
+            border: none;
+            border-radius: 6px;
+            padding: 0.5rem 0.75rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar-toggler:hover,
+        .navbar-toggler:focus {
+            background-color: rgba(0, 123, 255, 0.1);
+            outline: none;
+        }
+
+        .offcanvas-header,
+        .offcanvas-body {
+            background-color: #f8f9fa;
+        }
+
+        .nav-link {
+            font-size: 1.1rem;
+            margin-left: 1.1rem;
+            color: #555;
+            transition: color 0.3s ease;
+            padding: 0.7rem 0;
+        }
+
+        .nav-link:hover,
+        .nav-link:focus {
+            color: #007bff;
+            outline: none;
+        }
+
+        .nav-item.active .nav-link {
+            color: #007bff;
+            font-weight: 600;
+        }
+
+        /* Carousel */
+        .carousel-inner {
+            height: 24rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+        }
+
+        .carousel-item img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-item img:hover {
+            transform: scale(1.04);
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            width: 4rem;
+            height: 4rem;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: background-color 0.3s ease;
+        }
+
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: #fff;
+        }
+
+        /* Cards General */
+        .card {
+            border: none;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #fff;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-body {
+            padding: 2rem;
+            border-radius: 16px;
+        }
+
+        .card-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #007bff;
+            margin-bottom: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .card-title:hover {
+            color: #0056b3;
+        }
+
+        .card-text {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .display-4 {
+            font-size: 3rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #f0f0f0; /* Lighter footer background */
+            color: #555; /* Darker text color */
+            font-size: 1.1rem; /* Increased font size */
+            padding: 2.5rem 0; /* Increased padding */
+            margin-top: 4rem;
+            border-top: 2px solid #ddd; /* Subtle border */
+            display: flex;
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Vertically align items */
+            flex-direction: column; /* Stack items vertically */
+        }
+
+        footer p {
+            margin: 0.5rem 0; /* Added vertical margin between elements */
+        }
+
+        footer a {
+            color: #007bff; /* Link color */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #0056b3; /* Darker link color on hover */
+            text-decoration: underline;
+        }
+
+        /* Button Styling */
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            font-weight: 500;
+            border-radius: 10px;
+            padding: 0.8rem 2rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            outline: none;
+        }
+
+        .btn-primary i {
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .card-title {
+                font-size: 1.4rem;
+            }
+
+            .display-4 {
+                font-size: 2.6rem;
+            }
+
+            .carousel-inner {
+                height: 20rem;
+            }
+
+            .nav-link {
+                margin-left: 0.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .card-body {
+                padding: 1.5rem;
+            }
+
+            .carousel-inner {
+                height: 16rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        .db {
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+        }
+        .quick-links {
+    margin-top: 0.5rem;
+    padding: 0;
+}
+
+.quick-links li {
+    display: inline;
+}
+
+.quick-links a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+}
+
+.quick-links a:hover {
+    color: #fff;
+    background-color: #007bff;
+    text-decoration: none;
+}
+
+footer a {
+    color: #007bff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+footer a:hover {
+    color: #0056b3;
+    transform: translateX(4px);
+    text-decoration: underline;
+}
+
+
+    </style>
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Men's Shoes Shop</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+<body class="db">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <i class="fa-solid fa-school me-2" style="font-size: 1.5rem; color: #007bff;"></i>
+                <span style="font-size: 1.5rem;">Primary School</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+                <span class="navbar">Menu</span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#boots">Boots</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#sneakers">Sneakers</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#loafers">Loafers</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Shoes/contact.html">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-    <main>
-        <section id="home" class="hero">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="display-4">Welcome to Men's Shoes Shop</h1>
-                        <p class="lead">Explore our collection of men's shoes.</p>
-                        <a href="#boots" class="btn btn-primary">Shop Now</a>
-                    </div>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title">Menu</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
                 </div>
-            </div>
-        </section>
-        <section id="boots">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="mb-4">Boots</h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="boot1.jpg" alt="Boot 1">
-                            <div class="card-body">
-                                <h5 class="card-title">Chelsea Boot</h5>
-                                <a href="/Shoes/chelsea.html" class="btn btn-primary">View More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="boot2.jpg" alt="Boot 2">
-                            <div class="card-body">
-                                <h5 class="card-title">Work Boot</h5>
-                                <a href="work-boot.html" class="btn btn-primary">View More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="boot3.jpg" alt="Boot 3">
-                            <div class="card-body">
-                                <h5 class="card-title">Hiking Boot</h5>
-                                <a href="hiking-boot.html" class="btn btn-primary">View More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="sneakers">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="mb-4">Sneakers</h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="sneaker1.jpg" alt="Sneaker 1 ">
-                            <div class="card-body">
-                                <h5 class="card-title">Running Sneaker</h5>
-                                <a href="running-sneaker.html" class="btn btn-primary">View More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="sneaker2.jpg" alt="Sneaker 2">
-                            <div class="card-body">
-                                <h5 class="card-title">Basketball Sneaker</h5>
-                                <a href="basketball-sneaker.html" class="btn btn-primary">View More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="sneaker3.jpg" alt="Sneaker 3">
-                            <div class="card-body">
-                                <h5 class="card-title">Casual Sneaker</h5>
-                                <a href="casual-sneaker.html" class="btn btn-primary">View More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="loafers">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="mb-4">Loafers</h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="loafer1.jpg" alt="Loafer 1">
-                            <div class="card-body">
-                                <h5 class="card-title">Slip-On Loafer</h5>
-                                <a href="slip-on-loafer.html" class="btn btn-primary">View More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="loafer2.jpg" alt="Loafer 2">
-                            <div class="card-body">
-                                <h5 class="card-title">Tassel Loafer</h5>
-                                <a href="tassel-loafer.html" class="btn btn-primary">View More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="loafer3.jpg" alt="Loafer 3">
-                            <div class="card-body">
-                                <h5 class="card-title">Driving Loafer</h5>
-                                <a href="driving-loafer.html" class="btn btn-primary">View More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer class="bg-dark text-white">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <p>&copy; 2023 Men's Shoes Shop</p>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="result.html">Results</a></li>
+                        <li class="nav-item"><a class="nav-link" href="staff.html">Staff</a></li>
+                        <li class="nav-item"><a class="nav-link" href="achievements.html">Achievements</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        
+                      
+                    </ul>
                 </div>
             </div>
         </div>
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
+    </nav>
+
+    <div id="image-slider" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2Nob29sfGVufDB8fDB8fHww" class="d-block w-100" alt="Image 1">
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1495727034151-8fdc73e332a8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHNjaG9vbHxlbnwwfHwwfHx8MA%3D%3D" class="d-block w-100" alt="Image 2">
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1629652487043-fb2825838f8c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTJ8fHNjaG9vbHxlbnwwfHwwfHx8MA%3D%3D" class="d-block w-100" alt="Image 3">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#image-slider" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#image-slider" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="container mt-5">
+        <h2 style="color: #8e44ad;">About Our School</h2>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Standards</h5>
+                        <p id="standards-count" class="card-text display-4 fw-bold">0</p>
+                        <p class="card-text">We have 8 standards in our school.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Students</h5>
+                        <p id="students-count" class="card-text display-4 fw-bold">0</p>
+                        <p class="card-text">Over 500 students are studying in our school.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h2 style="color: #27ae60;">Class Standards Overview</h2>
+        <div class="row">
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Standard 1</h5>
+                        <p class="card-text"><strong>Students:</strong> 50</p>
+                        <p class="card-text"><strong>Class Teacher:</strong> Mrs. Alice Johnson</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Standard 2</h5>
+                        <p class="card-text"><strong>Students:</strong> 48</p>
+                        <p class="card-text"><strong>Class Teacher:</strong> Mr. Bob Williams</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Standard 3</h5>
+                        <p class="card-text"><strong>Students:</strong> 52</p>
+                        <p class="card-text"><strong>Class Teacher:</strong> Mrs. Charlie Davis</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Standard 4</h5>
+                        <p class="card-text"><strong>Students:</strong> 47</p>
+                        <p class="card-text"><strong>Class Teacher:</strong> Mr. David Smith</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Standard 5</h5>
+                        <p class="card-text"><strong>Students:</strong> 55</p>
+                        <p class="card-text"><strong>Class Teacher:</strong> Mrs. Emily Brown</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Standard 6</h5>
+                        <p class="card-text"><strong>Students:</strong> 53</p>
+                        <p class="card-text"><strong>Class Teacher:</strong> Mr. Frank Wilson</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Standard 7</h5>
+                        <p class="card-text"><strong>Students:</strong> 49</p>
+                        <p class="card-text"><strong>Class Teacher:</strong> Mrs. Grace Lee</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Standard 8</h5>
+                        <p class="card-text"><strong>Students:</strong> 51</p>
+                        <p class="card-text"><strong>Class Teacher:</strong> Mr. Henry Martin</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center py-3 mt-5">
+      <p>&copy; 2023 Primary School. All rights reserved.</p>
+      
+      <p>
+          <a href="https://www.example.com/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a> |
+          <a href="https://www.example.com/terms" target="_blank" rel="noopener noreferrer">Terms of Service</a>
+      </p>
+      
+      <p>
+        <strong><i class="fa-solid fa-link me-2"></i>Quick Links:</strong>
+        <a href="index.html"><i class="fa-solid fa-house me-1"></i>Home</a> |
+        <a href="result.html"><i class="fa-solid fa-chart-bar me-1"></i>Results</a> |
+        <a href="staff.html"><i class="fa-solid fa-users me-1"></i>Staff</a> |
+        <a href="achievements.html"><i class="fa-solid fa-trophy me-1"></i>Achievements</a> |
+        <a href="about.html"><i class="fa-solid fa-circle-info me-1"></i>About</a>
+    </p>
+    
+      <p>
+          <a href="mailto:developer@example.com" target="_blank" rel="noopener noreferrer">
+              Contact Developer
+          </a>
+      </p>
+  </footer>
+  
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Number Count Animation
+        document.addEventListener("DOMContentLoaded", () => {
+            const standardsCountElement = document.getElementById("standards-count");
+            const studentsCountElement = document.getElementById("students-count");
+
+            let standardsCount = 0;
+            let studentsCount = 0;
+
+            const targetStandards = 8;
+            const targetStudents = 500;
+
+            const interval = 20;
+
+            const standardsInterval = setInterval(() => {
+                standardsCount++;
+                standardsCountElement.textContent = standardsCount;
+
+                if (standardsCount >= targetStandards) {
+                    clearInterval(standardsInterval);
+                }
+            }, interval);
+
+            const studentsInterval = setInterval(() => {
+                studentsCount += 15;
+                if (studentsCount > targetStudents) {
+                    studentsCount = targetStudents;
+                }
+                studentsCountElement.textContent = studentsCount;
+
+                if (studentsCount >= targetStudents) {
+                    clearInterval(studentsInterval);
+                }
+            }, interval);
+        });
+    </script>
 </body>
-</html>s
+
+
+
+</html>
