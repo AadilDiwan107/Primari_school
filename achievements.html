@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Achievements - Primary School</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .dark-mode {
+      background-color: #121212;
+      color: #f0f0f0;
+    }
+
+    .navbar,
+    footer {
+      background-color: #fff;
+    }
+
+    .dark-mode .navbar,
+    .dark-mode footer {
+      background-color: #1c1c1c !important;
+      border-color: #444;
+    }
+
+    .navbar-brand {
+      color: #007bff;
+      font-weight: 600;
+      font-size: 1.5rem;
+    }
+
+    h2 {
+      font-weight: 700;
+      color: #2c3e50;
+      text-align: center;
+      margin: 2.5rem 0;
+    }
+
+    .achievement-card {
+      background-color: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      transition: 0.3s ease;
+      overflow: hidden;
+    }
+
+    .dark-mode .achievement-card {
+      background-color: #1e1e1e;
+      color: #f0f0f0;
+    }
+
+    .achievement-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+    }
+
+    .achievement-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .achievement-card .card-body {
+      padding: 1.5rem;
+    }
+
+    .achievement-card h5 {
+      font-size: 1.4rem;
+      color: #007bff;
+      font-weight: 600;
+    }
+
+    .dark-mode .achievement-card h5 {
+      color: #90caf9;
+    }
+
+    .achievement-card p {
+      color: #555;
+    }
+
+    .dark-mode .achievement-card p {
+      color: #ccc;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      margin-top: 4rem;
+      border-top: 1px solid #ccc;
+    }
+
+    footer a {
+      color: #007bff;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    #toggle-theme {
+      margin-left: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <i class="fa-solid fa-school me-2" style="font-size: 1.5rem; color: #007bff;"></i>
+        <span style="font-size: 1.5rem;">Primary School</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+        <span class="navbar">Menu</span>
+    </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title">Menu</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="result.html">Results</a></li>
+            <li class="nav-item"><a class="nav-link" href="staff.html">Staff</a></li>
+            <li class="nav-item"><a class="nav-link active" href="achievements.html">Achievements</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Achievements Section -->
+  <div class="container my-5">
+    <h2>🏆 School Achievements & Extra Activities</h2>
+    <div class="row">
+      <!-- Activity 1 -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card achievement-card">
+          <img src="https://images.unsplash.com/photo-1606312616319-c70e183e8b49?auto=format&fit=crop&w=600&q=60" alt="Science Fair">
+          <div class="card-body">
+            <h5>1st Prize - Science Fair</h5>
+            <p>Our students won the 1st prize at the inter-school science exhibition with their model on solar energy!</p>
+          </div>
+        </div>
+      </div>
+      <!-- Activity 2 -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card achievement-card">
+          <img src="https://images.unsplash.com/photo-1589820296151-245d0f0da40b?auto=format&fit=crop&w=600&q=60" alt="Sports Day">
+          <div class="card-body">
+            <h5>Champion Trophy - Annual Sports Day</h5>
+            <p>Our school won the overall championship in track and field events. Go team!</p>
+          </div>
+        </div>
+      </div>
+      <!-- Activity 3 -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card achievement-card">
+          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=600&q=60" alt="Art Competition">
+          <div class="card-body">
+            <h5>Art & Craft Competition</h5>
+            <p>Our talented students showcased their creativity and won multiple prizes in district-level events.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Activity 4 -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card achievement-card">
+          <img src="https://images.unsplash.com/photo-1613310351533-2531be46b5e5?auto=format&fit=crop&w=600&q=60" alt="Math Olympiad">
+          <div class="card-body">
+            <h5>Top 10 - Math Olympiad</h5>
+            <p>Our students ranked in the top 10 among 100+ schools in the state-level Math Olympiad.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2023 Primary School. All rights reserved.</p>
+    <p>
+      <a href="index.html"><i class="fa-solid fa-house me-1"></i>Home</a> |
+      <a href="result.html"><i class="fa-solid fa-chart-bar me-1"></i>Results</a> |
+      <a href="staff.html"><i class="fa-solid fa-users me-1"></i>Staff</a> |
+      <a href="achievements.html"><i class="fa-solid fa-trophy me-1"></i>Achievements</a> |
+      <a href="about.html"><i class="fa-solid fa-circle-info me-1"></i>About</a>
+    </p>
+    <p>
+      <a href="mailto:developer@example.com" target="_blank">Contact Developer</a>
+    </p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  
+</body>
+</html>
